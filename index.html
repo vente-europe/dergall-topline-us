@@ -69,6 +69,54 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
     </div>
   </div>
 
+  <!-- Brand Share Charts -->
+  <div class="charts-row">
+    <div class="card" style="margin-bottom:0">
+      <h3>Brand Share — Revenue 12M ($)</h3>
+      <div class="chart-wrap"><canvas id="brandRevChart"></canvas></div>
+    </div>
+    <div class="card" style="margin-bottom:0">
+      <h3>Brand Share — Units 12M</h3>
+      <div class="chart-wrap"><canvas id="brandUnitChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Top 15 ASINs Table -->
+  <div class="card">
+    <h3>Top 15 ASINs by Revenue — 12M (All Categories Multiplier: 13.5×)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>ASIN</th>
+          <th>Brand</th>
+          <th style="text-align:right">30-Day Units</th>
+          <th style="text-align:right">Seas. Multiplier</th>
+          <th style="text-align:right">12M Units</th>
+          <th style="text-align:right">12M Revenue $</th>
+          <th style="text-align:right">Share</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Premo Guard Poultry Spray — 128 oz</td><td>B0BW15HLSL</td><td>Premo Guard</td><td class="num">1,066</td><td class="num">13.5×</td><td class="num">14,373</td><td class="num">$1,293,139</td><td class="num">15.8%</td></tr>
+        <tr><td>Premo Guard Poultry Spray — 32 oz</td><td>B0B5JYG9QR</td><td>Premo Guard</td><td class="num">1,487</td><td class="num">13.5×</td><td class="num">20,049</td><td class="num">$721,163</td><td class="num">8.8%</td></tr>
+        <tr><td>Mite-B-Gone Dust Mite Killer Spray 16oz</td><td>B0CKM16ZPL</td><td>Naturasil</td><td class="num">1,452</td><td class="num">13.5×</td><td class="num">19,578</td><td class="num">$489,254</td><td class="num">6.0%</td></tr>
+        <tr><td>Premo Guard Poultry Spray — 16 oz</td><td>B0DJLG1YGM</td><td>Premo Guard</td><td class="num">1,319</td><td class="num">13.5×</td><td class="num">17,784</td><td class="num">$444,066</td><td class="num">5.4%</td></tr>
+        <tr><td>Atticus Fraxel PSP Insecticide 8oz</td><td>B0CY3V53QS</td><td>Atticus</td><td class="num">231</td><td class="num">13.5×</td><td class="num">3,115</td><td class="num">$404,919</td><td class="num">4.9%</td></tr>
+        <tr><td>Martin's Permethrin 13.3% Concentrate 32oz</td><td>B00PBGNCYY</td><td>MARTIN'S</td><td class="num">1,059</td><td class="num">13.5×</td><td class="num">14,279</td><td class="num">$399,669</td><td class="num">4.9%</td></tr>
+        <tr><td>Bonide Deadbug Brew 32oz Concentrate</td><td>B001VJ83LW</td><td>Bonide</td><td class="num">1,186</td><td class="num">13.5×</td><td class="num">15,991</td><td class="num">$385,543</td><td class="num">4.7%</td></tr>
+        <tr><td>Premo Guard Natural Mite Spray — 16 oz</td><td>B092815SDC</td><td>Premo Guard</td><td class="num">1,244</td><td class="num">13.5×</td><td class="num">16,773</td><td class="num">$376,889</td><td class="num">4.6%</td></tr>
+        <tr><td>Trifecta Crop Control 32oz</td><td>B07YBGPH7H</td><td>Trifecta</td><td class="num">859</td><td class="num">13.5×</td><td class="num">11,582</td><td class="num">$323,717</td><td class="num">4.0%</td></tr>
+        <tr><td>Premo Guard Natural Mite Spray — 32 oz</td><td>B09VJN89JJ</td><td>Premo Guard</td><td class="num">653</td><td class="num">13.5×</td><td class="num">8,804</td><td class="num">$284,985</td><td class="num">3.5%</td></tr>
+        <tr><td>Apivar Varroa Mite Strips 12-Pack</td><td>B0B9PKWD8F</td><td>Foxhound Bee Co.</td><td class="num">350</td><td class="num">13.5×</td><td class="num">4,719</td><td class="num">$259,498</td><td class="num">3.2%</td></tr>
+        <tr><td>BioAdvanced 3-in-1 Insect Spray RTS 32oz</td><td>B06W558PNF</td><td>BioAdvanced</td><td class="num">921</td><td class="num">13.5×</td><td class="num">12,418</td><td class="num">$248,112</td><td class="num">3.0%</td></tr>
+        <tr><td>Mite-B-Gone Killer Spray 1 Gal</td><td>B0CKLY6H52</td><td>Naturasil</td><td class="num">252</td><td class="num">13.5×</td><td class="num">3,398</td><td class="num">$248,020</td><td class="num">3.0%</td></tr>
+        <tr><td>Premo Guard Natural Mite Spray — 128 oz</td><td>B092829QPV</td><td>Premo Guard</td><td class="num">223</td><td class="num">13.5×</td><td class="num">3,007</td><td class="num">$243,477</td><td class="num">3.0%</td></tr>
+        <tr><td>Durvet Permethrin 10% 8oz</td><td>B007TA5QNA</td><td>Durvet</td><td class="num">1,143</td><td class="num">13.5×</td><td class="num">15,411</td><td class="num">$215,600</td><td class="num">2.6%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <!-- Seasonality Charts -->
   <div class="season-row">
     <div class="card">
@@ -227,6 +275,51 @@ new Chart(document.getElementById('pieChart'), {
       },
       tooltip: { callbacks: { label: ctx => { const pct=(ctx.parsed/UNITS.reduce((a,b)=>a+b,0)*100).toFixed(1); return ' '+ctx.parsed.toLocaleString()+' units ('+pct+'%)'; } } },
       datalabels: { display: ctx=>ctx.dataIndex<2, formatter: v=>{ return (v/UNITS.reduce((a,b)=>a+b,0)*100).toFixed(1)+'%'; }, color:'#fff', font:{size:11,weight:'700'} }
+    }
+  }
+});
+
+/* ── Brand Share: Revenue 12M (horizontal bar) ── */
+const BRAND_REV_LABELS = ['Premo Guard','Naturasil','Bonide','Atticus','BioAdvanced',"MARTIN'S",'Trifecta','Foxhound Bee Co.','Others'];
+const BRAND_REV = [3628817,771020,596636,477569,445684,399669,323717,259498,1260909];
+const BRAND_COLORS = ['#2563eb','#dc2626','#0891b2','#d97706','#7c3aed','#ea580c','#16a34a','#059669','#94a3b8'];
+
+new Chart(document.getElementById('brandRevChart'), {
+  type: 'bar',
+  data: { labels: BRAND_REV_LABELS, datasets: [{ data: BRAND_REV, backgroundColor: BRAND_COLORS, borderRadius: 4, borderSkipped: false }] },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ' $'+ctx.parsed.x.toLocaleString('en-US',{maximumFractionDigits:0}) } },
+      datalabels: { anchor:'end', align:'end', formatter: v=>'$'+(v>=1e6?(v/1e6).toFixed(1)+'M':(v/1e3).toFixed(0)+'K'), font:{size:10,weight:'600'}, color:'#1e293b' }
+    },
+    layout: { padding: { right: 50 } },
+    scales: {
+      y: { grid:{display:false}, ticks:{font:{size:10}} },
+      x: { grid:{color:'#e2e8f0'}, ticks:{ callback: v=>'$'+(v>=1e6?(v/1e6).toFixed(1)+'M':(v/1e3).toFixed(0)+'K') } }
+    }
+  }
+});
+
+/* ── Brand Share: Units 12M (horizontal bar) ── */
+const BRAND_UNIT_LABELS = ['Premo Guard','Bonide','BioAdvanced','Naturasil','Durvet',"MARTIN'S",'Black Flag','Trifecta','Others'];
+const BRAND_UNITS = [86399,30283,25928,23111,15411,14279,14279,11582,50872];
+
+new Chart(document.getElementById('brandUnitChart'), {
+  type: 'bar',
+  data: { labels: BRAND_UNIT_LABELS, datasets: [{ data: BRAND_UNITS, backgroundColor: BRAND_COLORS, borderRadius: 4, borderSkipped: false }] },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ' '+ctx.parsed.x.toLocaleString()+' units' } },
+      datalabels: { anchor:'end', align:'end', formatter: v=>(v>=1e3?(v/1e3).toFixed(1)+'K':v), font:{size:10,weight:'600'}, color:'#1e293b' }
+    },
+    layout: { padding: { right: 40 } },
+    scales: {
+      y: { grid:{display:false}, ticks:{font:{size:10}} },
+      x: { grid:{color:'#e2e8f0'}, ticks:{ callback: v=>(v/1e3).toFixed(0)+'K' } }
     }
   }
 });
