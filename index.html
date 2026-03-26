@@ -13,11 +13,11 @@ header{background:#0f2942;color:#fff;padding:18px 32px;display:flex;justify-cont
 header h1{font-size:1.1rem;font-weight:700;letter-spacing:.01em}
 header span{font-size:.75rem;color:#94a3b8}
 .main{max-width:1100px;margin:0 auto;padding:28px 24px}
-.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.kpi-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:24px}
 .kpi{background:#fff;border-radius:8px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,.07)}
 .kpi-v{font-size:1.25rem;font-weight:700;color:#0f2942;line-height:1.2}
 .kpi-l{font-size:.68rem;color:#64748b;margin-top:5px;text-transform:uppercase;letter-spacing:.05em}
-.charts-row{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-bottom:24px}
+.charts-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px}
 .card{background:#fff;border-radius:8px;padding:18px 20px;box-shadow:0 1px 3px rgba(0,0,0,.07);margin-bottom:24px}
 .card h3{font-size:.83rem;font-weight:600;color:#475569;margin-bottom:16px}
 .chart-wrap{position:relative;height:300px}
@@ -26,16 +26,14 @@ th{background:#f8fafc;text-align:left;padding:8px 10px;font-weight:600;color:#47
 td{padding:7px 10px;border-bottom:1px solid #f1f5f9;font-size:.82rem}
 tr:hover td{background:#f8fafc}
 td.num{text-align:right;font-variant-numeric:tabular-nums}
-.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;flex-shrink:0}
-.note{font-size:.7rem;color:#64748b;margin-top:18px;padding:10px 13px;background:#f8fafc;border-radius:6px;border-left:2px solid #cbd5e1;line-height:1.6}
 .total-row td{font-weight:700;color:#0f2942;background:#f8fafc;border-top:2px solid #e2e8f0}
-.season-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:0}
+.note{font-size:.7rem;color:#64748b;margin-top:18px;padding:10px 13px;background:#f8fafc;border-radius:6px;border-left:2px solid #cbd5e1;line-height:1.6}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Dergall US &mdash; Mite Control Market by Segment</h1>
+  <h1>Dergall US &mdash; Mite Control Market</h1>
   <span>12-Month Projection (seasonality-adjusted) &nbsp;|&nbsp; Data: Last 30 Days (Mar 2026)</span>
 </header>
 
@@ -44,46 +42,30 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
   <!-- KPI Row -->
   <div class="kpi-row">
     <div class="kpi">
-      <div class="kpi-v">$9.6M</div>
+      <div class="kpi-v">$7.7M</div>
       <div class="kpi-l">Total 12M Revenue (seasonality-adjusted)</div>
     </div>
     <div class="kpi">
-      <div class="kpi-v">314,670</div>
+      <div class="kpi-v">208,863</div>
       <div class="kpi-l">Total 12M Units Sold</div>
     </div>
-    <div class="kpi">
-      <div class="kpi-v">4 Segments</div>
-      <div class="kpi-l">Red Mite &bull; Garden Mite &bull; Permethrin &bull; Other</div>
-    </div>
   </div>
 
-  <!-- Revenue & Unit Share Charts -->
+  <!-- Brand Share Pie Charts -->
   <div class="charts-row">
     <div class="card" style="margin-bottom:0">
-      <h3>Revenue by Segment — 12M ($)</h3>
-      <div class="chart-wrap"><canvas id="barChart"></canvas></div>
-    </div>
-    <div class="card" style="margin-bottom:0">
-      <h3>Unit Share by Segment — 12M</h3>
-      <div class="chart-wrap"><canvas id="pieChart"></canvas></div>
-    </div>
-  </div>
-
-  <!-- Brand Share Charts -->
-  <div class="charts-row">
-    <div class="card" style="margin-bottom:0">
-      <h3>Brand Share — Revenue 12M ($)</h3>
-      <div class="chart-wrap"><canvas id="brandRevChart"></canvas></div>
+      <h3>Brand Share — Revenue 12M</h3>
+      <div class="chart-wrap"><canvas id="brandRevPie"></canvas></div>
     </div>
     <div class="card" style="margin-bottom:0">
       <h3>Brand Share — Units 12M</h3>
-      <div class="chart-wrap"><canvas id="brandUnitChart"></canvas></div>
+      <div class="chart-wrap"><canvas id="brandUnitPie"></canvas></div>
     </div>
   </div>
 
-  <!-- Top 15 ASINs Table -->
+  <!-- Top 10 ASINs Table -->
   <div class="card">
-    <h3>Top 15 ASINs by Revenue — 12M (All Categories Multiplier: 13.5×)</h3>
+    <h3>Top 10 ASINs by Revenue — 12M (Seasonality-Adjusted)</h3>
     <table>
       <thead>
         <tr>
@@ -91,121 +73,62 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
           <th>ASIN</th>
           <th>Brand</th>
           <th style="text-align:right">30-Day Units</th>
-          <th style="text-align:right">Seas. Multiplier</th>
+          <th style="text-align:right">Multiplier</th>
           <th style="text-align:right">12M Units</th>
           <th style="text-align:right">12M Revenue $</th>
           <th style="text-align:right">Rev Share</th>
-          <th style="text-align:right">Unit Share</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Premo Guard Poultry Spray — 128 oz</td><td>B0BW15HLSL</td><td>Premo Guard</td><td class="num">1,066</td><td class="num">13.5×</td><td class="num">14,373</td><td class="num">$1,293,139</td><td class="num">15.8%</td><td class="num">5.2%</td></tr>
-        <tr><td>Premo Guard Poultry Spray — 32 oz</td><td>B0B5JYG9QR</td><td>Premo Guard</td><td class="num">1,487</td><td class="num">13.5×</td><td class="num">20,049</td><td class="num">$721,163</td><td class="num">8.8%</td><td class="num">7.3%</td></tr>
-        <tr><td>Mite-B-Gone Dust Mite Killer Spray 16oz</td><td>B0CKM16ZPL</td><td>Naturasil</td><td class="num">1,452</td><td class="num">13.5×</td><td class="num">19,578</td><td class="num">$489,254</td><td class="num">6.0%</td><td class="num">7.1%</td></tr>
-        <tr><td>Premo Guard Poultry Spray — 16 oz</td><td>B0DJLG1YGM</td><td>Premo Guard</td><td class="num">1,319</td><td class="num">13.5×</td><td class="num">17,784</td><td class="num">$444,066</td><td class="num">5.4%</td><td class="num">6.5%</td></tr>
-        <tr><td>Atticus Fraxel PSP Insecticide 8oz</td><td>B0CY3V53QS</td><td>Atticus</td><td class="num">231</td><td class="num">13.5×</td><td class="num">3,115</td><td class="num">$404,919</td><td class="num">4.9%</td><td class="num">1.1%</td></tr>
-        <tr><td>Martin's Permethrin 13.3% Concentrate 32oz</td><td>B00PBGNCYY</td><td>MARTIN'S</td><td class="num">1,059</td><td class="num">13.5×</td><td class="num">14,279</td><td class="num">$399,669</td><td class="num">4.9%</td><td class="num">5.2%</td></tr>
-        <tr><td>Bonide Deadbug Brew 32oz Concentrate</td><td>B001VJ83LW</td><td>Bonide</td><td class="num">1,186</td><td class="num">13.5×</td><td class="num">15,991</td><td class="num">$385,543</td><td class="num">4.7%</td><td class="num">5.8%</td></tr>
-        <tr><td>Premo Guard Natural Mite Spray — 16 oz</td><td>B092815SDC</td><td>Premo Guard</td><td class="num">1,244</td><td class="num">13.5×</td><td class="num">16,773</td><td class="num">$376,889</td><td class="num">4.6%</td><td class="num">6.1%</td></tr>
-        <tr><td>Trifecta Crop Control 32oz</td><td>B07YBGPH7H</td><td>Trifecta</td><td class="num">859</td><td class="num">13.5×</td><td class="num">11,582</td><td class="num">$323,717</td><td class="num">4.0%</td><td class="num">4.2%</td></tr>
-        <tr><td>Premo Guard Natural Mite Spray — 32 oz</td><td>B09VJN89JJ</td><td>Premo Guard</td><td class="num">653</td><td class="num">13.5×</td><td class="num">8,804</td><td class="num">$284,985</td><td class="num">3.5%</td><td class="num">3.2%</td></tr>
-        <tr><td>Apivar Varroa Mite Strips 12-Pack</td><td>B0B9PKWD8F</td><td>Foxhound Bee Co.</td><td class="num">350</td><td class="num">13.5×</td><td class="num">4,719</td><td class="num">$259,498</td><td class="num">3.2%</td><td class="num">1.7%</td></tr>
-        <tr><td>BioAdvanced 3-in-1 Insect Spray RTS 32oz</td><td>B06W558PNF</td><td>BioAdvanced</td><td class="num">921</td><td class="num">13.5×</td><td class="num">12,418</td><td class="num">$248,112</td><td class="num">3.0%</td><td class="num">4.5%</td></tr>
-        <tr><td>Mite-B-Gone Killer Spray 1 Gal</td><td>B0CKLY6H52</td><td>Naturasil</td><td class="num">252</td><td class="num">13.5×</td><td class="num">3,398</td><td class="num">$248,020</td><td class="num">3.0%</td><td class="num">1.2%</td></tr>
-        <tr><td>Premo Guard Natural Mite Spray — 128 oz</td><td>B092829QPV</td><td>Premo Guard</td><td class="num">223</td><td class="num">13.5×</td><td class="num">3,007</td><td class="num">$243,477</td><td class="num">3.0%</td><td class="num">1.1%</td></tr>
-        <tr><td>Durvet Permethrin 10% 8oz</td><td>B007TA5QNA</td><td>Durvet</td><td class="num">1,143</td><td class="num">13.5×</td><td class="num">15,411</td><td class="num">$215,600</td><td class="num">2.6%</td><td class="num">5.6%</td></tr>
+        <tr><td>Premo Guard Poultry Spray — 128 oz</td><td>B0BW15HLSL</td><td>Premo Guard</td><td class="num">1,066</td><td class="num">21.9×</td><td class="num">23,345</td><td class="num">$2,100,350</td><td class="num">27.2%</td></tr>
+        <tr><td>Premo Guard Poultry Spray — 32 oz</td><td>B0B5JYG9QR</td><td>Premo Guard</td><td class="num">1,487</td><td class="num">21.9×</td><td class="num">32,565</td><td class="num">$1,171,363</td><td class="num">15.2%</td></tr>
+        <tr><td>Mite-B-Gone Dust Mite Killer Spray 16oz</td><td>B0CKM16ZPL</td><td>Naturasil</td><td class="num">1,452</td><td class="num">21.9×</td><td class="num">31,799</td><td class="num">$794,657</td><td class="num">10.3%</td></tr>
+        <tr><td>Premo Guard Poultry Spray — 16 oz</td><td>B0DJLG1YGM</td><td>Premo Guard</td><td class="num">1,319</td><td class="num">21.9×</td><td class="num">28,886</td><td class="num">$721,283</td><td class="num">9.3%</td></tr>
+        <tr><td>Martin's Permethrin 13.3% Concentrate 32oz</td><td>B00PBGNCYY</td><td>MARTIN'S</td><td class="num">1,059</td><td class="num">23.3×</td><td class="num">24,675</td><td class="num">$690,653</td><td class="num">8.9%</td></tr>
+        <tr><td>Atticus Fraxel PSP Insecticide 8oz</td><td>B0CY3V53QS</td><td>Atticus</td><td class="num">231</td><td class="num">21.9×</td><td class="num">5,059</td><td class="num">$657,619</td><td class="num">8.5%</td></tr>
+        <tr><td>Mite-B-Gone Killer Spray 1 Gal</td><td>B0CKLY6H52</td><td>Naturasil</td><td class="num">252</td><td class="num">21.9×</td><td class="num">5,519</td><td class="num">$402,832</td><td class="num">5.2%</td></tr>
+        <tr><td>Durvet Permethrin 10% 8oz</td><td>B007TA5QNA</td><td>Durvet</td><td class="num">1,143</td><td class="num">23.3×</td><td class="num">26,632</td><td class="num">$372,582</td><td class="num">4.8%</td></tr>
+        <tr><td>Elanco Permectrin II Insecticide 32oz</td><td>B0042LGX6S</td><td>Elanco</td><td class="num">538</td><td class="num">23.3×</td><td class="num">12,535</td><td class="num">$323,278</td><td class="num">4.2%</td></tr>
+        <tr><td>Premo Guard Pet Protector Spray — 128 oz</td><td>B0D52P5TVQ</td><td>Premo Guard</td><td class="num">87</td><td class="num">21.9×</td><td class="num">1,905</td><td class="num">$171,393</td><td class="num">2.2%</td></tr>
+        <tr class="total-row"><td><strong>Total (all 15)</strong></td><td></td><td></td><td class="num">9,362</td><td class="num">—</td><td class="num">208,863</td><td class="num">$7,726,768</td><td class="num">100%</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Seasonality Charts -->
-  <div class="season-row">
-    <div class="card">
-      <h3>Seasonality — All Categories (monthly units, 2Y trend)</h3>
-      <div class="chart-wrap"><canvas id="seasonAllChart"></canvas></div>
-    </div>
-    <div class="card">
-      <h3>Seasonality — Red Mite Only (monthly units, 2Y trend)</h3>
-      <div class="chart-wrap"><canvas id="seasonRedChart"></canvas></div>
-    </div>
-  </div>
-
-  <!-- Seasonality Index Chart -->
+  <!-- Brand Breakdown Table -->
   <div class="card">
-    <h3>Monthly Seasonality Index (1.0 = average month)</h3>
-    <div class="chart-wrap"><canvas id="seasonIndexChart"></canvas></div>
-  </div>
-
-  <!-- Segment Table -->
-  <div class="card">
-    <h3>Breakdown by Segment &mdash; 12M (seasonality-adjusted)</h3>
+    <h3>Brand Breakdown — 12M (Seasonality-Adjusted)</h3>
     <table>
       <thead>
         <tr>
-          <th>Segment</th>
-          <th style="text-align:right">ASINs</th>
+          <th>Brand</th>
           <th style="text-align:right">30-Day Units</th>
           <th style="text-align:right">Multiplier</th>
-          <th style="text-align:right">12M Units (est.)</th>
+          <th style="text-align:right">12M Units</th>
           <th style="text-align:right">12M Revenue $</th>
-          <th style="text-align:right">Share</th>
+          <th style="text-align:right">Rev Share</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span class="dot" style="background:#dc2626"></span>Red Mite</td>
-          <td class="num">19</td>
-          <td class="num">10,264</td>
-          <td class="num">17.5×</td>
-          <td class="num">179,620</td>
-          <td class="num">$6,779,823</td>
-          <td class="num">70.4%</td>
-        </tr>
-        <tr>
-          <td><span class="dot" style="background:#16a34a"></span>Garden Mite</td>
-          <td class="num">13</td>
-          <td class="num">6,797</td>
-          <td class="num">13.4×</td>
-          <td class="num">91,080</td>
-          <td class="num">$1,767,030</td>
-          <td class="num">18.3%</td>
-        </tr>
-        <tr>
-          <td><span class="dot" style="background:#2563eb"></span>Permethrin</td>
-          <td class="num">3</td>
-          <td class="num">2,740</td>
-          <td class="num">13.7×</td>
-          <td class="num">37,538</td>
-          <td class="num">$786,475</td>
-          <td class="num">8.2%</td>
-        </tr>
-        <tr>
-          <td><span class="dot" style="background:#94a3b8"></span>Other</td>
-          <td class="num">4</td>
-          <td class="num">536</td>
-          <td class="num">12×</td>
-          <td class="num">6,432</td>
-          <td class="num">$298,703</td>
-          <td class="num">3.1%</td>
-        </tr>
-        <tr class="total-row">
-          <td><strong>Total</strong></td>
-          <td class="num">39</td>
-          <td class="num">20,337</td>
-          <td class="num">—</td>
-          <td class="num">314,670</td>
-          <td class="num">$9,632,031</td>
-          <td class="num">100%</td>
-        </tr>
+        <tr><td>Premo Guard</td><td class="num">3,959</td><td class="num">21.9×</td><td class="num">86,701</td><td class="num">$4,164,389</td><td class="num">53.9%</td></tr>
+        <tr><td>Naturasil</td><td class="num">1,714</td><td class="num">21.9×</td><td class="num">37,537</td><td class="num">$1,252,232</td><td class="num">16.2%</td></tr>
+        <tr><td>MARTIN'S</td><td class="num">1,059</td><td class="num">23.3×</td><td class="num">24,675</td><td class="num">$690,653</td><td class="num">8.9%</td></tr>
+        <tr><td>Atticus</td><td class="num">231</td><td class="num">21.9×</td><td class="num">5,059</td><td class="num">$657,619</td><td class="num">8.5%</td></tr>
+        <tr><td>Durvet</td><td class="num">1,143</td><td class="num">23.3×</td><td class="num">26,632</td><td class="num">$372,582</td><td class="num">4.8%</td></tr>
+        <tr><td>Elanco</td><td class="num">538</td><td class="num">23.3×</td><td class="num">12,535</td><td class="num">$323,278</td><td class="num">4.2%</td></tr>
+        <tr><td>Neogen</td><td class="num">497</td><td class="num">21.9×</td><td class="num">10,884</td><td class="num">$114,173</td><td class="num">1.5%</td></tr>
+        <tr><td>Pampered Chicken Mama</td><td class="num">133</td><td class="num">21.9×</td><td class="num">2,913</td><td class="num">$57,940</td><td class="num">0.7%</td></tr>
+        <tr><td>Mite-B-Gone</td><td class="num">66</td><td class="num">21.9×</td><td class="num">1,445</td><td class="num">$57,757</td><td class="num">0.7%</td></tr>
+        <tr><td>ECOPEST</td><td class="num">22</td><td class="num">21.9×</td><td class="num">482</td><td class="num">$36,145</td><td class="num">0.5%</td></tr>
+        <tr class="total-row"><td><strong>Total</strong></td><td class="num">9,362</td><td class="num">—</td><td class="num">208,863</td><td class="num">$7,726,768</td><td class="num">100%</td></tr>
       </tbody>
     </table>
   </div>
 
-  <div class="note">
-    <strong>Data source:</strong> Helium 10 X-Ray (30-day snapshot, 22/03/2026, 15 scans, 39 unique ASINs) + Helium 10 Sales Tracker (daily units, 15 ASINs tracked over 24 months). &nbsp;&nbsp;
-    <strong>Methodology:</strong> Multipliers derived from seasonality analysis of 24-month sales history. March is below-average for mite products (index 0.69–0.89 depending on segment).
-    Multiplier = 12 ÷ March seasonality index. Red Mite 17.5× (strong summer peak Jul–Aug), Garden Mite 13.4× (category average), Permethrin 13.7×, Other 12× (default, no tracking data). &nbsp;&nbsp;
-    <strong>Segments:</strong> Red Mite = poultry, bird, household/bed/dust mite products. Garden Mite = plant pest control. Permethrin = general permethrin insecticides. Other = bee varroa, biocontrol, repellents.
+  <!-- Monthly Seasonality Chart -->
+  <div class="card">
+    <h3>Monthly Seasonality Index (1.0 = average month)</h3>
+    <div class="chart-wrap"><canvas id="seasonChart"></canvas></div>
   </div>
 
 </div>
@@ -213,197 +136,89 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 <script>
 Chart.register(ChartDataLabels);
 
-/* ── Segment data (seasonality-adjusted) ── */
-const LABELS  = ['Red Mite','Garden Mite','Permethrin','Other'];
-const REVENUE = [6779823, 1767030, 786475, 298703];
-const UNITS   = [179620, 91080, 37538, 6432];
-const COLORS  = ['#dc2626','#16a34a','#2563eb','#94a3b8'];
+/* ── Brand data ── */
+const BRAND_REV_LABELS = ['Premo Guard','Naturasil',"MARTIN'S",'Atticus','Durvet','Elanco','Neogen','Pampered Chicken Mama','Others'];
+const BRAND_REV = [4164389,1252232,690653,657619,372582,323278,114173,57940,93902];
+const BRAND_UNIT_LABELS = ['Premo Guard','Naturasil','Durvet',"MARTIN'S",'Elanco','Neogen','Atticus','Pampered Chicken Mama','Others'];
+const BRAND_UNITS = [86701,37537,26632,24675,12535,10884,5059,2913,1927];
+const BRAND_COLORS = ['#2563eb','#dc2626','#ea580c','#d97706','#16a34a','#7c3aed','#0891b2','#059669','#94a3b8'];
 
-/* ── Monthly sales data (24 months) ── */
-const MONTHS = ['Mar 24','Apr 24','May 24','Jun 24','Jul 24','Aug 24','Sep 24','Oct 24','Nov 24','Dec 24','Jan 25','Feb 25','Mar 25','Apr 25','May 25','Jun 25','Jul 25','Aug 25','Sep 25','Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26'];
-const ALL_SALES = [1982,8924,11362,12117,9769,11191,10505,9218,8127,7202,7160,8352,11704,14872,19232,19685,22049,22467,18901,16027,14438,11092,10847,11301,9839];
-const RED_SALES = [1053,3660,4362,4616,3207,4423,4068,2997,2800,2408,2507,3170,4541,5655,7639,8290,8694,8653,7220,5557,4028,2964,2511,2965,2106];
+/* ── helpers ── */
+const fmtDollar = v => v>=1e6 ? '$'+(v/1e6).toFixed(1)+'M' : '$'+(v/1e3).toFixed(0)+'K';
+const fmtUnits = v => v>=1e3 ? (v/1e3).toFixed(1)+'K' : v.toString();
+const revTotal = BRAND_REV.reduce((a,b)=>a+b,0);
+const unitTotal = BRAND_UNITS.reduce((a,b)=>a+b,0);
 
-/* ── Seasonality index (1.0 = average) ── */
-const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const SEASON_ALL = [0.67,0.69,0.89,0.91,1.18,1.21,1.35,1.38,1.16,0.98,0.89,0.68];
-const SEASON_RED = [0.44,0.52,0.69,1.00,1.35,1.46,1.53,1.53,1.27,0.98,0.71,0.52];
-
-/* ── Bar chart: Revenue by Segment ── */
-new Chart(document.getElementById('barChart'), {
-  type: 'bar',
-  data: { labels: LABELS, datasets: [{ data: REVENUE, backgroundColor: COLORS, borderRadius: 4, borderSkipped: false }] },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: {
-          font: { size: 11 }, padding: 10, boxWidth: 12, boxHeight: 12,
-          generateLabels: chart => {
-            const total = REVENUE.reduce((a,b)=>a+b,0);
-            return LABELS.map((l,i) => ({ text: l+'  '+(REVENUE[i]/total*100).toFixed(1)+'%', fillStyle: COLORS[i], strokeStyle: COLORS[i], lineWidth:0, index:i, hidden:false }));
-          }
-        }
-      },
-      tooltip: { callbacks: { label: ctx => ' $'+ctx.parsed.y.toLocaleString('en-US',{maximumFractionDigits:0}) } },
-      datalabels: { anchor:'end', align:'end', formatter: v=>'$'+(v>=1e6?(v/1e6).toFixed(1)+'M':(v/1e3).toFixed(0)+'K'), font:{size:11,weight:'600'}, color:'#1e293b' }
-    },
-    layout: { padding: { top: 22 } },
-    scales: {
-      x: { grid:{display:false}, ticks:{font:{size:12}} },
-      y: { grid:{color:'#e2e8f0'}, ticks:{ callback: v=>'$'+(v>=1e6?(v/1e6).toFixed(1)+'M':(v/1e3).toFixed(0)+'K') } }
-    }
-  }
-});
-
-/* ── Doughnut chart: Unit Share ── */
-new Chart(document.getElementById('pieChart'), {
+/* ── Brand Share: Revenue Pie ── */
+new Chart(document.getElementById('brandRevPie'), {
   type: 'doughnut',
-  data: { labels: LABELS, datasets: [{ data: UNITS, backgroundColor: COLORS, borderWidth:2, borderColor:'#fff' }] },
+  data: { labels: BRAND_REV_LABELS, datasets: [{ data: BRAND_REV, backgroundColor: BRAND_COLORS, borderWidth:2, borderColor:'#fff' }] },
   options: {
-    responsive: true, maintainAspectRatio: false, cutout: '52%',
+    responsive: true, maintainAspectRatio: false, cutout: '48%',
     plugins: {
       legend: {
-        position: 'bottom',
-        labels: {
-          font:{size:11}, padding:10, boxWidth:12, boxHeight:12,
-          generateLabels: chart => {
-            const total = UNITS.reduce((a,b)=>a+b,0);
-            return chart.data.labels.map((l,i) => ({ text: l+'  '+(chart.data.datasets[0].data[i]/total*100).toFixed(1)+'%', fillStyle:COLORS[i], strokeStyle:COLORS[i], lineWidth:0, index:i, hidden:false }));
-          }
+        position:'bottom',
+        labels:{
+          font:{size:10}, padding:8, boxWidth:10, boxHeight:10,
+          generateLabels: chart => BRAND_REV_LABELS.map((l,i) => ({
+            text: l+'  '+fmtDollar(BRAND_REV[i])+'  '+(BRAND_REV[i]/revTotal*100).toFixed(1)+'%',
+            fillStyle: BRAND_COLORS[i], strokeStyle: BRAND_COLORS[i], lineWidth:0, index:i, hidden:false
+          }))
         }
       },
-      tooltip: { callbacks: { label: ctx => { const pct=(ctx.parsed/UNITS.reduce((a,b)=>a+b,0)*100).toFixed(1); return ' '+ctx.parsed.toLocaleString()+' units ('+pct+'%)'; } } },
-      datalabels: { display: ctx=>ctx.dataIndex<2, formatter: v=>{ return (v/UNITS.reduce((a,b)=>a+b,0)*100).toFixed(1)+'%'; }, color:'#fff', font:{size:11,weight:'700'} }
+      tooltip: { callbacks: { label: ctx => { const pct=(ctx.parsed/revTotal*100).toFixed(1); return ' $'+ctx.parsed.toLocaleString()+' ('+pct+'%)'; } } },
+      datalabels: {
+        display: ctx=>ctx.dataset.data[ctx.dataIndex]/revTotal>0.06,
+        formatter: v=>{ return (v/revTotal*100).toFixed(0)+'%\n'+fmtDollar(v); },
+        color:'#fff', font:{size:10,weight:'700'}, textAlign:'center'
+      }
     }
   }
 });
 
-/* ── Brand Share: Revenue 12M (horizontal bar) ── */
-const BRAND_REV_LABELS = ['Premo Guard','Naturasil','Bonide','Atticus','BioAdvanced',"MARTIN'S",'Trifecta','Foxhound Bee Co.','Others'];
-const BRAND_REV = [3628817,771020,596636,477569,445684,399669,323717,259498,1260909];
-const BRAND_COLORS = ['#2563eb','#dc2626','#0891b2','#d97706','#7c3aed','#ea580c','#16a34a','#059669','#94a3b8'];
-
-new Chart(document.getElementById('brandRevChart'), {
-  type: 'bar',
-  data: { labels: BRAND_REV_LABELS, datasets: [{ data: BRAND_REV, backgroundColor: BRAND_COLORS, borderRadius: 4, borderSkipped: false }] },
+/* ── Brand Share: Units Pie ── */
+new Chart(document.getElementById('brandUnitPie'), {
+  type: 'doughnut',
+  data: { labels: BRAND_UNIT_LABELS, datasets: [{ data: BRAND_UNITS, backgroundColor: BRAND_COLORS, borderWidth:2, borderColor:'#fff' }] },
   options: {
-    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    responsive: true, maintainAspectRatio: false, cutout: '48%',
     plugins: {
-      legend: { display: false },
-      tooltip: { callbacks: { label: ctx => ' $'+ctx.parsed.x.toLocaleString('en-US',{maximumFractionDigits:0}) } },
-      datalabels: { anchor:'end', align:'end', formatter: v=>'$'+(v>=1e6?(v/1e6).toFixed(1)+'M':(v/1e3).toFixed(0)+'K'), font:{size:10,weight:'600'}, color:'#1e293b' }
-    },
-    layout: { padding: { right: 50 } },
-    scales: {
-      y: { grid:{display:false}, ticks:{font:{size:10}} },
-      x: { grid:{color:'#e2e8f0'}, ticks:{ callback: v=>'$'+(v>=1e6?(v/1e6).toFixed(1)+'M':(v/1e3).toFixed(0)+'K') } }
+      legend: {
+        position:'bottom',
+        labels:{
+          font:{size:10}, padding:8, boxWidth:10, boxHeight:10,
+          generateLabels: chart => BRAND_UNIT_LABELS.map((l,i) => ({
+            text: l+'  '+fmtUnits(BRAND_UNITS[i])+'  '+(BRAND_UNITS[i]/unitTotal*100).toFixed(1)+'%',
+            fillStyle: BRAND_COLORS[i], strokeStyle: BRAND_COLORS[i], lineWidth:0, index:i, hidden:false
+          }))
+        }
+      },
+      tooltip: { callbacks: { label: ctx => { const pct=(ctx.parsed/unitTotal*100).toFixed(1); return ' '+ctx.parsed.toLocaleString()+' units ('+pct+'%)'; } } },
+      datalabels: {
+        display: ctx=>ctx.dataset.data[ctx.dataIndex]/unitTotal>0.06,
+        formatter: v=>{ return (v/unitTotal*100).toFixed(0)+'%\n'+fmtUnits(v); },
+        color:'#fff', font:{size:10,weight:'700'}, textAlign:'center'
+      }
     }
   }
 });
 
-/* ── Brand Share: Units 12M (horizontal bar) ── */
-const BRAND_UNIT_LABELS = ['Premo Guard','Bonide','BioAdvanced','Naturasil','Durvet',"MARTIN'S",'Black Flag','Trifecta','Others'];
-const BRAND_UNITS = [86399,30283,25928,23111,15411,14279,14279,11582,50872];
+/* ── Monthly Seasonality Index (single bar chart) ── */
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const SEASON_ALL = [0.53,0.56,0.53,1.19,1.65,1.53,1.44,1.17,0.99,0.91,0.88,0.61];
 
-new Chart(document.getElementById('brandUnitChart'), {
-  type: 'bar',
-  data: { labels: BRAND_UNIT_LABELS, datasets: [{ data: BRAND_UNITS, backgroundColor: BRAND_COLORS, borderRadius: 4, borderSkipped: false }] },
-  options: {
-    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: { callbacks: { label: ctx => ' '+ctx.parsed.x.toLocaleString()+' units' } },
-      datalabels: { anchor:'end', align:'end', formatter: v=>(v>=1e3?(v/1e3).toFixed(1)+'K':v), font:{size:10,weight:'600'}, color:'#1e293b' }
-    },
-    layout: { padding: { right: 40 } },
-    scales: {
-      y: { grid:{display:false}, ticks:{font:{size:10}} },
-      x: { grid:{color:'#e2e8f0'}, ticks:{ callback: v=>(v/1e3).toFixed(0)+'K' } }
-    }
-  }
-});
-
-/* ── Seasonality: All Categories (area chart) ── */
-new Chart(document.getElementById('seasonAllChart'), {
-  type: 'line',
-  data: {
-    labels: MONTHS,
-    datasets: [{
-      label: 'All Categories',
-      data: ALL_SALES,
-      borderColor: '#0f2942',
-      backgroundColor: 'rgba(15,41,66,0.08)',
-      fill: true,
-      tension: 0.3,
-      pointRadius: 2,
-      pointHoverRadius: 5,
-      borderWidth: 2
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      datalabels: { display: false },
-      tooltip: { callbacks: { label: ctx => ' '+ctx.parsed.y.toLocaleString()+' units' } }
-    },
-    scales: {
-      x: { grid:{display:false}, ticks:{font:{size:9}, maxRotation:45} },
-      y: { grid:{color:'#e2e8f0'}, ticks:{ callback: v=>(v/1e3).toFixed(0)+'K' }, beginAtZero: true }
-    }
-  }
-});
-
-/* ── Seasonality: Red Mite Only (area chart) ── */
-new Chart(document.getElementById('seasonRedChart'), {
-  type: 'line',
-  data: {
-    labels: MONTHS,
-    datasets: [{
-      label: 'Red Mite',
-      data: RED_SALES,
-      borderColor: '#dc2626',
-      backgroundColor: 'rgba(220,38,38,0.08)',
-      fill: true,
-      tension: 0.3,
-      pointRadius: 2,
-      pointHoverRadius: 5,
-      borderWidth: 2
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      datalabels: { display: false },
-      tooltip: { callbacks: { label: ctx => ' '+ctx.parsed.y.toLocaleString()+' units' } }
-    },
-    scales: {
-      x: { grid:{display:false}, ticks:{font:{size:9}, maxRotation:45} },
-      y: { grid:{color:'#e2e8f0'}, ticks:{ callback: v=>(v/1e3).toFixed(0)+'K' }, beginAtZero: true }
-    }
-  }
-});
-
-/* ── Seasonality Index (bar chart, side by side) ── */
-new Chart(document.getElementById('seasonIndexChart'), {
+new Chart(document.getElementById('seasonChart'), {
   type: 'bar',
   data: {
     labels: MONTH_NAMES,
-    datasets: [
-      { label: 'All Categories', data: SEASON_ALL, backgroundColor: 'rgba(15,41,66,0.65)', borderRadius: 3 },
-      { label: 'Red Mite', data: SEASON_RED, backgroundColor: 'rgba(220,38,38,0.65)', borderRadius: 3 }
-    ]
+    datasets: [{ data: SEASON_ALL, backgroundColor: SEASON_ALL.map(v=>v>=1?'rgba(22,163,74,0.65)':'rgba(220,38,38,0.45)'), borderRadius: 3 }]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
     plugins: {
-      legend: { position:'bottom', labels:{font:{size:11}, padding:10, boxWidth:12, boxHeight:12} },
-      datalabels: { display: false },
-      tooltip: { callbacks: { label: ctx => ' '+ctx.dataset.label+': '+ctx.parsed.y.toFixed(2)+'×' } },
-      annotation: {}
+      legend: { display: false },
+      datalabels: { anchor:'end', align:'end', formatter: v=>v.toFixed(2)+'×', font:{size:10,weight:'600'}, color:'#1e293b' },
+      tooltip: { callbacks: { label: ctx => ' '+ctx.parsed.y.toFixed(2)+'×' } }
     },
     scales: {
       x: { grid:{display:false}, ticks:{font:{size:11}} },
@@ -411,7 +226,7 @@ new Chart(document.getElementById('seasonIndexChart'), {
         grid:{color:'#e2e8f0'},
         ticks:{ callback: v=>v.toFixed(1)+'×' },
         suggestedMin: 0,
-        suggestedMax: 1.8
+        suggestedMax: 2.0
       }
     }
   }
